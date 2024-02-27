@@ -48,3 +48,11 @@ exports.deletePost = async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
+
+module.exports = {
+    getAllPosts,
+    getPostById,
+    createPost,
+    updatePost,
+    deletePost
+};
