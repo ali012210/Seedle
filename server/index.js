@@ -11,6 +11,7 @@ db.on('connected', () => console.log('MongoDB connected'));
 db.on('error', (err) => console.log('MongoDB connection error: ', err));
 db.on('disconnected', () => console.log('MongoDB disconnected'));
 
+const cors = require('cors');
 const express = require('express');
 const authRoutes = require('./routes/auth');
 const app = express();
@@ -20,6 +21,7 @@ const userRoutes = require('./routes/users');
 const postRoutes = require('./routes/posts');
 
 // Middleware
+app.use(cors()); // Enable All CORS Requests
 app.use(express.json()); // for parsing application/json
 
 // Use routes
