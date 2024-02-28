@@ -63,7 +63,7 @@ exports.login = async (req, res) => {
         }
 
         // Attempt to locate user in database
-        const user = await User.findOne ({ email });
+        const user = await User.findOne ({ username });
 
         // If user is found and password is correct
         if (user && (await bcrypt.compare(password, user.password))) {
