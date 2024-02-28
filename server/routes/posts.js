@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const isAuthenticated = require('../middleware/isAuthenticated');
 
 // Importing the post controller
 const {
@@ -19,12 +20,12 @@ router.get('/', getAllPosts);
 router.get('/:id', getPostById);
 
 // Create a new post
-router.post('/', createPost);
+router.post('/', isAuthenticated, createPost);
 
 // Update a post
-router.put('/:id', updatePost);
+router.put('/:id', isAuthenticated, updatePost);
 
 // Delete a post
-router.delete('/:id', deletePost);
+router.delete('/:id', isAuthenticated, deletePost);
 
 module.exports = router;
