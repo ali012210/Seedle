@@ -5,11 +5,18 @@ const jwt = require('jsonwebtoken');
 // Register a new user
 exports.registerUser = async (req, res) => {
     try {
-        // Check if the user already exists
+        // Get user input
         const { email, password, username } = req.body;
-        let user = await User.findOne({ email });
-        if (user) {
-            return res.status(400).json({ message: 'User already exists' });
+
+        // Validate user input
+        if (!(email && password && username)) {
+            return res.status(400).send('All details must be provided');
+        }
+
+        // Check if user already exists
+        let existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(409).json({ message: 'User already exists. Please Login' });
         }
 
         // Hash password
@@ -17,66 +24,66 @@ exports.registerUser = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         // Create a new user
-        user = new User({
-            ...req.body,
-            password: hashedPassword
+        const user = await User.create({
+        username,
+        email: email.toLowerCase(), // sanitize: convert email to lowercase
+        password: hashedPassword,
         });
-       
-        await user.save();
 
-        // Create and return a JWT
-        const payload = {
-            user: {
-                id: user.id,
-            },
-        };
-
-        jwt.sign(
-            payload,
-            process.env.JWT_SECRET,
-            { expiresIn: 3600 }, // 1 hour
-            (err, token) => {
-                if (err) throw err;
-                res.json({ token });
-            }
+        // Create a JWT token for new user
+        const token = jwt.sign(
+        { user_id: user._id, email },
+        process.env.JWT_SECRET,
+        {
+            expiresIn: '2h',
+        }
         );
+
+        // Assign the JWT token to the user (not saved to the database)
+        user.token = token;
+
+        // Respond with user data (excluding password)
+        res.status(201).json(user);
     } catch (error) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
     }
 };
 
-// Login a user and return a JWT
+
+// Login user
 exports.login = async (req, res) => {
     try {
+        // Extract username and password from request body
         const { username, password } = req.body;
-        let user = await User.findOne ({ username });
-        if (!user) {
-            return res.status(400).json({ message: 'Invalid Username' });
+
+        // Validate user input
+        if (!(username && password)) {
+            return res.status(400).json({ message: 'Username and Password input required' });
         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({ message: 'Invalid Password' });
+        // Attempt to locate user in database
+        const user = await User.findOne ({ email });
+
+        // If user is found and password is correct
+        if (user && (await bcrypt.compare(password, user.password))) {
+            // Create a new JWT token
+            const token = jwt.sign(
+                { user_id: user._id, email },
+                process.env.JWT_SECRET,
+                {
+                    expiresIn: '2h',
+                }
+            );
+
+            // Save the JWT token to the user and respond with user data (excluding password)
+            user.token = token;
+            res.status(200).json(user);
+        } else {
+            res.status(400).json({ message: 'Invalid Credentials' });
         }
-
-        const payload = {
-            user: {
-                id: user.id,
-            },
-        };
-
-        jwt.sign(
-            payload,
-            process.env.JWT_SECRET,
-            { expiresIn: 3600 }, // 1 hour
-            (err, token) => {
-                if (err) throw err;
-                res.json({ token });
-            }
-        );
     } catch (error) {
-        console.error(err.message);
+        console.error(error.message);
         res.status(500).send('Server Error');
     }
 };
