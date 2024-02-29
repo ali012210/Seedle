@@ -15,23 +15,24 @@ const cors = require('cors');
 const express = require('express');
 const authRoutes = require('./routes/auth');
 const app = express();
+const errorHandlingMiddleware = require('./middleware/errorMiddleware');
 
 // Import routes
 const userRoutes = require('./routes/users');
 const postRoutes = require('./routes/posts');
-
-// Middleware
-app.use(cors()); // Enable All CORS Requests
-app.use(express.json()); // for parsing application/json
 
 // Use routes
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
 
-const PORT = process.env.PORT || 5000;
+// Middleware
+app.use(cors()); // Enable All CORS Requests
+app.use(express.json()); // for parsing application/json
+app.use(errorHandlingMiddleware);
 
-app.get('/', (req, res) => res.send('Hello World!'));
+// Start server
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
