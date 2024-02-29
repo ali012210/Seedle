@@ -14,3 +14,4 @@ function errorHandlingMiddleware(err, req, res, next) {
     });
 }
 
+module.exports = errorHandlingMiddleware;
