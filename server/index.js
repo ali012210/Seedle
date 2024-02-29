@@ -3,6 +3,33 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const MONGO_URI = "mongodb+srv://ali012210:Eid3433417@seedle-dev.2r8bul2.mongodb.net/?retryWrites=true&w=majority&appName=Seedle-Dev";
 const mongoose = require('mongoose');
 
+// Connect to MongoDB
+
+// Create a new MongoClient
+const client = new MongoClient(MONGO_URI, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true
+    },
+});
+
+async function run() {
+    try {
+        // Connect the client to the server
+        await client.connect();
+
+        // Establish and verify connection by sending ping
+        await client.db("admin").command({ ping: 1 });
+        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
+}
+
+run().catch(console.dir);
+
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
