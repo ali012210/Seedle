@@ -1,4 +1,6 @@
 require('dotenv').config();
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const MONGO_URI = "mongodb+srv://ali012210:Eid3433417@seedle-dev.2r8bul2.mongodb.net/?retryWrites=true&w=majority&appName=Seedle-Dev";
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
