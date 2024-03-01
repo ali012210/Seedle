@@ -17,7 +17,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     }
+    totalSeeds: {
+        type: Number,
+        default: 0
+    }, //Total seeds from all posts
+    plantsOwned: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Plant' }] //Array of plants corresponding to the plants the user owns and maintains
+}, { timestamps: true
 });
+
 
 // Pre-save hook to hash the password before saving the user to the database
 userSchema.pre('save', function (next) {
