@@ -15,6 +15,7 @@ db.on('disconnected', () => console.log('MongoDB disconnected'));
 
 const cors = require('cors');
 const helmet = require('helmet');
+const xss = require('xss');
 const express = require('express');
 const authRoutes = require('./routes/auth');
 const app = express();
@@ -33,6 +34,7 @@ app.use('/api/auth', authRoutes);
 app.use(cors()); // Enable All CORS Requests
 app.use(express.json()); // for parsing application/json
 app.use(helmet()); // Secure HTTP headers
+app.use(xss()); // Sanitize user input
 app.use(errorHandlingMiddleware);
 
 // Start server
