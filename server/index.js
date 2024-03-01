@@ -14,6 +14,7 @@ db.on('error', (err) => console.log('MongoDB connection error: ', err));
 db.on('disconnected', () => console.log('MongoDB disconnected'));
 
 const cors = require('cors');
+const helmet = require('helmet');
 const express = require('express');
 const authRoutes = require('./routes/auth');
 const app = express();
@@ -31,6 +32,7 @@ app.use('/api/auth', authRoutes);
 // Middleware
 app.use(cors()); // Enable All CORS Requests
 app.use(express.json()); // for parsing application/json
+app.use(helmet()); // Secure HTTP headers
 app.use(errorHandlingMiddleware);
 
 // Start server
