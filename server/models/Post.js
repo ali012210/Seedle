@@ -14,6 +14,10 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    image: {
+        // URL to an (optional) image associated with the post
+        type: String,
+    },
     tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tag' }],
     seeds: {
         type: Number,
