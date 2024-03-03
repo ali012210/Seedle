@@ -24,10 +24,12 @@ const errorHandlingMiddleware = require('./middleware/errorMiddleware');
 // Import routes
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
+const commentRoutes = require('./routes/commentRoutes');
 
 // Use routes
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
+app.use('/api/comments', commentRoutes);
 app.use('/api/auth', authRoutes);
 
 // Middleware

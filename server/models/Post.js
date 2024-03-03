@@ -18,6 +18,7 @@ const postSchema = new mongoose.Schema({
         // URL to an (optional) image associated with the post
         type: String,
     },
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
     tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tag' }],
     seeds: {
         type: Number,

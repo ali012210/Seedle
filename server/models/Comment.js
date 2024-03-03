@@ -17,6 +17,10 @@ const commentSchema = new mongoose.Schema({
 
     content: { type: String, required: true },
 
+    replies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
+
+    deleted: { type: Boolean, default: false },
+
     seeds: { type: Number, default: 0 }
 }, { timestamps: true });
 
