@@ -22,7 +22,7 @@ const app = express();
 const errorHandlingMiddleware = require('./middleware/errorMiddleware');
 
 // Import routes
-const userRoutes = require('./routes/users');
+const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/posts');
 
 // Use routes
