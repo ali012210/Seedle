@@ -26,12 +26,14 @@ const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 const plantRoutes = require('./routes/plantRoutes');
+const tagRoutes = require('./routes/tagRoutes');
 
 // Use routes
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/plants', plantRoutes);
+app.use('/api/tags', tagRoutes);
 app.use('/api/auth', authRoutes);
 
 // Middleware
