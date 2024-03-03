@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 import { isTokenExpired } from './authUtils';
+import { ThemeProvider } from './context/ThemeContext';
+import AppRoutes from './AppRoutes';
 
 function App() {
 
@@ -30,7 +34,11 @@ function App() {
   }, []);
 
   return (
+    <Router>
+      <AuthProvider>
+        <ThemeProvider>
     <div className="App">
+      <AppRoutes/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -46,6 +54,9 @@ function App() {
         </a>
       </header>
     </div>
+        </ThemeProvider>
+      </AuthProvider>
+    </Router>
   );
 
 

@@ -1,4 +1,4 @@
-import React, { createContext, useReducer} from 'react';
+import React, { createContext, useContext, useReducer} from 'react';
 
 export const AuthContext = createContext();
 
@@ -26,6 +26,7 @@ const reducer = (state, action) => {
     }
 };
 
+// AuthProvider component to wrap the app with
 export const AuthProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -35,3 +36,6 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+// Custom hook to consume the auth context
+export const useAuth = () => useContext(AuthContext);
