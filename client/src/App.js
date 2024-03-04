@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { isTokenExpired } from './authUtils';
 import { ThemeProvider } from './context/ThemeContext';
 import AppRoutes from './AppRoutes';
+import { PostsProvider } from './context/PostsContext';
+import PostsList from './components/PostsList';
 
 function App() {
 
@@ -37,6 +39,7 @@ function App() {
     <Router>
       <AuthProvider>
         <ThemeProvider>
+          <PostsProvider>
     <div className="App">
       <AppRoutes/>
       <header className="App-header">
@@ -53,7 +56,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <Route path="/" exact component={PostsList} />
     </div>
+          </PostsProvider>
         </ThemeProvider>
       </AuthProvider>
     </Router>
