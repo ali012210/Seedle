@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
+import { BrowserRouter as Router} from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-import { isTokenExpired } from './authUtils';
 import { ThemeProvider } from './context/ThemeContext';
-import AppRoutes from './AppRoutes';
 import { PostsProvider } from './context/PostsContext';
-import PostsList from './components/PostsList';
+import AppRoutes from './AppRoutes';
+import { isTokenExpired } from './authUtils';
+
 
 function App() {
 
@@ -27,9 +26,7 @@ function App() {
 
     // Check token expiry on app load
     checkAuth();
-
     // Set an interval to check token expiry periodically
-
     const intervalId = setInterval(checkAuth, 5 * 60 * 1000); // Check every 5 minutes
 
     return () => clearInterval(intervalId); // Cleanup the interval on unmount
@@ -40,31 +37,14 @@ function App() {
       <AuthProvider>
         <ThemeProvider>
           <PostsProvider>
-    <div className="App">
-      <AppRoutes/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Route path="/" exact component={PostsList} />
-    </div>
+            <div className="App">
+              <AppRoutes/>
+            </div>
           </PostsProvider>
         </ThemeProvider>
       </AuthProvider>
     </Router>
   );
-
-
 }
 
 export default App;
