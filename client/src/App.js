@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, useHistory} from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { PostsProvider } from './context/PostsContext';
 import AppRoutes from './AppRoutes';
 import { isTokenExpired } from './authUtils';
 
-
-function App() {
+const App = () => {
+  let history = useHistory();
 
   useEffect(() => {
     const checkAuth = () => {
@@ -19,8 +19,7 @@ function App() {
         alert('Your session has expired. Please login again.');
         // Perform logout by clearing the token from localStorage and redirect to login page
         localStorage.removeItem('token');
-
-        // Redirect to login page
+        history.push('/login'); // Redirect to login page
       }
     };
 
@@ -30,21 +29,27 @@ function App() {
     const intervalId = setInterval(checkAuth, 5 * 60 * 1000); // Check every 5 minutes
 
     return () => clearInterval(intervalId); // Cleanup the interval on unmount
-  }, []);
+  }, [history]); // Ensure to include history as a dependency
 
+  return (
+    <div className="App">
+      <AppRoutes />
+    </div>
+  );
+};
+
+const AppWrapper = () => {
   return (
     <Router>
       <AuthProvider>
         <ThemeProvider>
           <PostsProvider>
-            <div className="App">
-              <AppRoutes/>
-            </div>
+            <App />
           </PostsProvider>
         </ThemeProvider>
       </AuthProvider>
     </Router>
   );
-}
+};
 
-export default App;
+export default AppWrapper;
