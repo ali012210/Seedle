@@ -4,6 +4,7 @@ import { BrowserRouter as Router, useHistory} from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { PostsProvider } from './context/PostsContext';
+import { CommentsProvider } from './context/CommentsContext';
 import AppRoutes from './AppRoutes';
 import { isTokenExpired } from './authUtils';
 
@@ -44,7 +45,9 @@ const AppWrapper = () => {
       <AuthProvider>
         <ThemeProvider>
           <PostsProvider>
-            <App />
+            <CommentsProvider> {/* Add CommentsProvider here */}
+              <App />
+            </CommentsProvider>
           </PostsProvider>
         </ThemeProvider>
       </AuthProvider>
