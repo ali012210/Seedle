@@ -5,6 +5,8 @@ import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { PostsProvider } from './context/PostsContext';
 import { CommentsProvider } from './context/CommentsContext';
+import { TagsProvider } from './context/TagsContext';
+import { UIProvider } from './context/UIContext';
 import AppRoutes from './AppRoutes';
 import { isTokenExpired } from './authUtils';
 
@@ -44,11 +46,15 @@ const AppWrapper = () => {
     <Router>
       <AuthProvider>
         <ThemeProvider>
-          <PostsProvider>
-            <CommentsProvider> {/* Add CommentsProvider here */}
-              <App />
-            </CommentsProvider>
-          </PostsProvider>
+          <UIProvider>
+            <TagsProvider>
+              <PostsProvider>
+                <CommentsProvider> {/* Add CommentsProvider here */}
+                  <App />
+                </CommentsProvider>
+              </PostsProvider>
+            </TagsProvider>
+          </UIProvider>
         </ThemeProvider>
       </AuthProvider>
     </Router>
