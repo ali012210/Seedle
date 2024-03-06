@@ -54,8 +54,15 @@ export const TagsProvider = ({ children }) => {
 
     // Action creators
     const setSelectedTags = (tags) => {
-        dispatch({ type: actionTypes.SET_SELECTED_TAGS, payload: tags });
+        // Ensure the tags array adheres to the minimum and maximum tag requirements
+        if (tags.length >=1 && tags.length <= 5) {
+            dispatch({ type: actionTypes.SET_SELECTED_TAGS, payload: tags });
+        } else {
+            console.error('Posts must have between 1 and 5 tags');
+            // Handle this error state appropriately in the UI
+        }
     };
+
 
     const clearSelectedTags = () => {
         dispatch({ type: actionTypes.CLEAR_SELECTED_TAGS });
