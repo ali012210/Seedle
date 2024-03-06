@@ -1,6 +1,5 @@
 import React, { createContext, useReducer } from 'react';
 
-// Define the reducer function inside the same file for cohesion
 const postsReducer = (state, action) => {
     switch(action.type) {
         case 'FETCH_POSTS':
