@@ -70,4 +70,3 @@ export const UIProvider = ({ children }) => {
 
 // Custom hook to consume the UI context
 export const useUI = () => useContext(UIContext);
-
