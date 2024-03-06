@@ -10,6 +10,7 @@ import { TagsProvider } from './context/TagsContext';
 import { UIProvider } from './context/UIContext';
 import AppRoutes from './AppRoutes';
 import { isTokenExpired } from './authUtils';
+import { UserOverviewProvider } from './context/UserOverviewContext';
 
 const App = () => {
   let history = useHistory();
@@ -48,15 +49,17 @@ const AppWrapper = () => {
       <AuthProvider>
         <ThemeProvider>
           <UserProfileProvider>
-            <UIProvider>
-              <TagsProvider>
-                <PostsProvider>
-                  <CommentsProvider> {/* Add CommentsProvider here */}
-                    <App />
-                  </CommentsProvider>
-                </PostsProvider>
-              </TagsProvider>
-            </UIProvider>
+            <UserOverviewProvider>
+              <UIProvider>
+                <TagsProvider>
+                  <PostsProvider>
+                    <CommentsProvider> {/* Add CommentsProvider here */}
+                      <App />
+                   </CommentsProvider>
+                  </PostsProvider>
+                </TagsProvider>
+              </UIProvider>
+            </UserOverviewProvider>
           </UserProfileProvider>
         </ThemeProvider>
       </AuthProvider>
