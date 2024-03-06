@@ -117,4 +117,3 @@ async function fetchUserProfile(userId) {
 async function updateUserProfile(userId, updatedUserData) {
     // Simulate updating user profile data via an API
 }
-
