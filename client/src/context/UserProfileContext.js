@@ -108,3 +108,13 @@ export const UserProfileProvider = ({ children }) => {
 
 // Custom hook to consume the user profile context
 export const useUserProfile = () => useContext(UserProfileContext);
+
+// Helper functions for API calls
+async function fetchUserProfile(userId) {
+    // Simulate fetching user profile data from an API
+}
+
+async function updateUserProfile(userId, updatedUserData) {
+    // Simulate updating user profile data via an API
+}
+

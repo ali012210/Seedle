@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, useHistory} from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { UserProfileProvider } from './context/UserProfileContext';
 import { PostsProvider } from './context/PostsContext';
 import { CommentsProvider } from './context/CommentsContext';
 import { TagsProvider } from './context/TagsContext';
@@ -46,15 +47,17 @@ const AppWrapper = () => {
     <Router>
       <AuthProvider>
         <ThemeProvider>
-          <UIProvider>
-            <TagsProvider>
-              <PostsProvider>
-                <CommentsProvider> {/* Add CommentsProvider here */}
-                  <App />
-                </CommentsProvider>
-              </PostsProvider>
-            </TagsProvider>
-          </UIProvider>
+          <UserProfileProvider>
+            <UIProvider>
+              <TagsProvider>
+                <PostsProvider>
+                  <CommentsProvider> {/* Add CommentsProvider here */}
+                    <App />
+                  </CommentsProvider>
+                </PostsProvider>
+              </TagsProvider>
+            </UIProvider>
+          </UserProfileProvider>
         </ThemeProvider>
       </AuthProvider>
     </Router>
