@@ -31,7 +31,5 @@ export const tagsService = {
       throw error.response.data;
     }
   },
-
-  // Since tags are hardcoded and unmodifiable, functions for creating, updating, or deleting tags are omitted.
 };
 
