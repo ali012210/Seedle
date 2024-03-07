@@ -5,10 +5,11 @@ const postsReducer = (state, action) => {
         case 'FETCH_POSTS':
             return {
                 ...state,
-                posts: [...state.posts, ...action.payload.posts],
+                posts: action.payload.posts,
                 hasMore: action.payload.hasMore,
                 isLoading: false,
-            };
+              };
+          
         case 'START_LOADING':
             return {
                 ...state,
