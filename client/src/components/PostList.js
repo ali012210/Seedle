@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback } from 'react';
+import React, { useContext, useEffect, useCallback } from 'react';
 import { PostsContext } from '../context/PostsContext';
 import Post from './Post';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -6,21 +6,19 @@ import './PostList.css'; // Assuming you have some CSS for styling
 
 const PostList = () => {
   const { posts, fetchMorePosts, hasMore, isLoading } = useContext(PostsContext);
-  const [page, setPage] = useState(0);
-  const postsPerPage = 10; // Adjust based on your preference
+const postsPerPage = 10; // Adjust based on your preference
 
-  // Function to handle fetching more posts
-  const loadMorePosts = useCallback(() => {
+// Function to handle fetching more posts
+const loadMorePosts = useCallback(() => {
     if (!isLoading && hasMore) {
-      setPage((prevPage) => prevPage + 1); // Increment page count to fetch next set of posts
-      fetchMorePosts(posts.length, postsPerPage); // Assuming your context provides this function
+        fetchMorePosts(posts.length, postsPerPage); // Assuming your context provides this function
     }
-  }, [fetchMorePosts, isLoading, hasMore, posts.length]);
+}, [fetchMorePosts, isLoading, hasMore, posts.length]);
 
-  // Initially load posts
-  useEffect(() => {
+// Initially load posts
+useEffect(() => {
     fetchMorePosts(0, postsPerPage);
-  }, [fetchMorePosts]);
+}, [fetchMorePosts]);
 
   return (
     <div id="scrollableDiv" className="post-list-container">

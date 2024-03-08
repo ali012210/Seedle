@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PostsContext } from '../context/PostsContext';
 import { AuthContext } from '../context/AuthContext';
-import { CommentsContext } from '../context/CommentsContext';
+
+// import { CommentsContext } from '../context/CommentsContext';
 import CommentList from './CommentList'; // Component to list comments
 import CreateCommentForm from './CreateCommentForm'; // Form to add a new comment
 import { formatDate } from '../utils/formatDate'; // Assume this function exists for formatting dates
