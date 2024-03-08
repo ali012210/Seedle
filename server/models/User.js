@@ -17,11 +17,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    bio: {
+        type: String,
+        default: 'No bio provided'
+    },
     profilePicture: {
         // URL to an (optional) profile picture. If not provided, a default image is used
         type: String,
         default: 'https://res.cloudinary.com/dk3b3ml2z/image/upload/v1617313636/Plantify/default-profile-picture_kjyqyv.png'
     },
+    plantsOwned: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Plant' }],
+
     totalSeeds: {
         //Total seeds from all posts
         type: Number,
