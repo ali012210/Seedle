@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // For redirecting after login
+import { useNavigate } from 'react-router-dom'; // For redirecting after login
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const history = useHistory(); // To redirect user after login
+    const navigate = useNavigate(); // To redirect user after login
 
     const handleLogin = async (e) => {
         e.preventDefault(); // Prevent page refresh/form submission
@@ -22,7 +22,7 @@ const Login = () => {
             if (response.ok) {
                 // Save the token in localStorage
                 localStorage.setItem('token', data.token); // store the token in localStorage
-                history.push('/'); // Redirect to home page
+                navigate('/'); // Redirect to home page
             } else {
                 alert(data.message);
             }

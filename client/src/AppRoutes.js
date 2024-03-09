@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import UserProfile from './pages/UserProfile';
 import PostCreationPage from './pages/PostCreationPage';
@@ -13,7 +13,7 @@ import PrivateRoute from './components/PrivateRoute'; // A component for handlin
 function AppRoutes() {
     return (
         <Router>
-            <Switch>
+            <Routes>
                 <Route path="/" exact component={HomePage} />
                 <PrivateRoute path="/user/:userID" component={UserOverview} />
                 <PrivateRoute path="/post/new" component={PostCreationPage} />
@@ -23,7 +23,7 @@ function AppRoutes() {
                 <Route path="/signup" component={SignUpPage} />
                 <Route path="/:postID/comments" component={PostViewPage} />
                 <Redirect to="/" />
-            </Switch>
+            </Routes>
         </Router>
     );
 };

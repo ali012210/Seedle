@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, useHistory} from 'react-router-dom';
+import { BrowserRouter as Router, useNavigate} from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { UserProfileProvider } from './context/UserProfileContext';
@@ -13,7 +13,7 @@ import { isTokenExpired } from './authUtils';
 import { UserOverviewProvider } from './context/UserOverviewContext';
 
 const App = () => {
-  let history = useHistory();
+  let navigate = useNavigate();
 
   useEffect(() => {
     const checkAuth = () => {
@@ -24,7 +24,7 @@ const App = () => {
         alert('Your session has expired. Please login again.');
         // Perform logout by clearing the token from localStorage and redirect to login page
         localStorage.removeItem('token');
-        history.push('/login'); // Redirect to login page
+        navigate('/login'); // Redirect to login page
       }
     };
 
@@ -34,7 +34,7 @@ const App = () => {
     const intervalId = setInterval(checkAuth, 5 * 60 * 1000); // Check every 5 minutes
 
     return () => clearInterval(intervalId); // Cleanup the interval on unmount
-  }, [history]); // Ensure to include history as a dependency
+  }, [navigate]); // Include navigate as a dependency
 
   return (
     <div className="App">
