@@ -4,5 +4,8 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "mongoose": "^8.2.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
