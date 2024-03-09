@@ -27,6 +27,7 @@ const postRoutes = require('./routes/postRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 const plantRoutes = require('./routes/plantRoutes');
 const tagRoutes = require('./routes/tagRoutes');
+const path = require('path');
 
 // Use routes
 app.use('/api/users', userRoutes);
@@ -42,6 +43,10 @@ app.use(express.json()); // for parsing application/json
 app.use(helmet()); // Secure HTTP headers
 app.use(xss()); // Sanitize user input
 app.use(errorHandlingMiddleware);
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 // Start server
 const PORT = process.env.PORT || 3000; // Use Heroku's dynamic port or default to 3000 if not available
