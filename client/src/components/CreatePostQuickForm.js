@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { PostsContext } from '../context/PostsContext'; // Assuming you have this context
-import { useHistory } from 'react-router-dom'; // For redirecting after post creation
+import { useNavigate } from 'react-router-dom'; // For redirecting after post creation
 
 const CreatePostQuickForm = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [tag, setTag] = useState('');
   const { addPost } = useContext(PostsContext); // Assuming your PostsContext provides a method to add a new post
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const CreatePostQuickForm = () => {
       setTitle('');
       setContent('');
       setTag('');
-      history.push('/'); // Redirect to the homepage or a desired route after successful post creation
+      navigate('/'); // Redirect to the homepage or a desired route after successful post creation
     } catch (error) {
       console.error('Failed to create post:', error);
       alert('Failed to create post. Please try again.');

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import './Login.css'; // Assuming you have CSS for styling
 
@@ -8,7 +8,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const naviagte = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       await login(username, password);
-      history.push('/'); // Redirect to homepage after successful login
+      naviagte('/'); // Redirect to homepage after successful login
     } catch (err) {
       setError('Failed to login. Please check your username and password.');
       console.error('Login error:', err);

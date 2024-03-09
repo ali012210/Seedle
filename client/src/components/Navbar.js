@@ -1,12 +1,12 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         localStorage.removeItem('token'); // Remove the token from localStorage
-        history.push('/login'); // Redirect to login page
+        navigate('/login'); // Redirect to login page
     };
 
     return (

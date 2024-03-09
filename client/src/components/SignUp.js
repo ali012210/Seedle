@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { authService } from '../services/authService';
 import './SignUp.css'; // Assuming you have CSS for styling
 
@@ -10,7 +10,7 @@ const SignUp = () => {
   const [bio, setBio] = useState('');
   const [profilePicture, setProfilePicture] = useState(null);
   const [error, setError] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const SignUp = () => {
         bio,
         profilePicture,
       });
-      history.push('/login'); // Redirect user to login page after successful sign-up
+      navigate('/login'); // Redirect user to login page after successful sign-up
     } catch (err) {
       setError('Failed to sign up. Please try again.');
       console.error('Sign up error:', err);
