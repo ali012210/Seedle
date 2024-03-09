@@ -48,6 +48,14 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+  }  
+
 // Start server
 const PORT = process.env.PORT || 3000; // Use Heroku's dynamic port or default to 3000 if not available
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
