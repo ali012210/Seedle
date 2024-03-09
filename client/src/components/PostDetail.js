@@ -6,7 +6,7 @@ import { AuthContext } from '../context/AuthContext';
 // import { CommentsContext } from '../context/CommentsContext';
 import CommentList from './CommentList'; // Component to list comments
 import CreateCommentForm from './CreateCommentForm'; // Form to add a new comment
-import { formatDate } from '../utils/formatDate'; // Assume this function exists for formatting dates
+import { formatDate } from '../utils/formatDate.js'; // Assume this function exists for formatting dates
 import './PostDetail.css'; // Your CSS for styling
 
 const PostDetail = () => {

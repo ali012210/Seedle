@@ -1,0 +1,30 @@
+[
+    {
+      "title": "The Joy of Indoor Gardening",
+      "content": "Indoor gardening can transform your home into a lush paradise...",
+      "author": "ObjectId('5f3e653efc13ae1728000001')",
+      "image": "https://example.com/images/indoor-gardening.jpg",
+      "tags": [
+        "ObjectId('5f3e6550fc13ae1728000002')",
+        "ObjectId('5f3e6550fc13ae1728000003')"
+      ],
+      "likes": 150,
+      "commentsCount": 12,
+      "createdAt": "2023-09-01T10:00:00.000Z",
+      "updatedAt": "2023-09-02T15:00:00.000Z"
+    },
+    {
+      "title": "Top 5 Low-Maintenance Plants",
+      "content": "Not everyone has a green thumb or the time to care for plants...",
+      "author": "ObjectId('5f3e653efc13ae1728000002')",
+      "image": "https://example.com/images/low-maintenance-plants.jpg",
+      "tags": [
+        "ObjectId('5f3e6550fc13ae1728000004')",
+        "ObjectId('5f3e6550fc13ae1728000005')"
+      ],
+      "likes": 95,
+      "commentsCount": 5,
+      "createdAt": "2023-08-25T09:20:00.000Z",
+      "updatedAt": "2023-08-26T10:15:00.000Z"
+    }
+  ] 

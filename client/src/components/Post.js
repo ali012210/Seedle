@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { PostsContext } from '../context/PostsContext';
-import { formatDate } from '../utils/formatDate'; // A utility function to format dates
+import { formatDate } from '../utils/formatDate.js'; // A utility function to format dates
 import './Post.css'; // Assuming you have some CSS for styling
 
 const Post = ({ post }) => {

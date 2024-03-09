@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { formatDate } from '../utils/formatDate'; // Assuming a utility function for date formatting
+import { formatDate } from '../utils/formatDate.js'; // Assuming a utility function for date formatting
 import './Comment.css'; // Assuming you have CSS for styling
 
 const Comment = ({ comment }) => {

@@ -1,0 +1,30 @@
+[
+    {
+      "content": "Absolutely love this! Indoor gardening has changed my home atmosphere completely.",
+      "post": "ObjectId('5f3e653efc13ae1728000001')",
+      "author": "ObjectId('5f3e653efc13ae1728000002')",
+      "parentComment": null,
+      "likes": 10,
+      "createdAt": "2023-09-02T12:00:00.000Z",
+      "updatedAt": "2023-09-02T14:00:00.000Z"
+    },
+    {
+      "content": "Great tips! I've been looking for low-maintenance plants.",
+      "post": "ObjectId('5f3e653efc13ae1728000002')",
+      "author": "ObjectId('5f3e653efc13ae1728000001')",
+      "parentComment": null,
+      "likes": 5,
+      "createdAt": "2023-08-26T11:30:00.000Z",
+      "updatedAt": "2023-08-26T13:45:00.000Z"
+    },
+    {
+      "content": "That's really helpful, thanks for sharing!",
+      "post": "ObjectId('5f3e653efc13ae1728000001')",
+      "author": "ObjectId('5f3e653efc13ae1728000002')",
+      "parentComment": "ObjectId('5f3e653efc13ae1728000003')",
+      "likes": 3,
+      "createdAt": "2023-09-03T09:20:00.000Z",
+      "updatedAt": "2023-09-03T10:00:00.000Z"
+    }
+  ]
+  

@@ -1,11 +1,11 @@
 // src/pages/HomePage.js
 import React from 'react';
-import PostsList from '../components/PostsList';
+import PostList from '../components/PostList';
 
 const HomePage = () => {
   return (
     <div>
-      <PostsList />
+      <PostList />
     </div>
   );
 };

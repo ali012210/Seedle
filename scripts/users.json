@@ -1,0 +1,26 @@
+[
+    {
+      "username": "plantlover",
+      "password": "$2b$10$examplehashedpasswordhere",
+      "email": "plantlover@example.com",
+      "bio": "Obsessed with all things green and leafy.",
+      "profilePicture": "https://example.com/path/to/profile/picture.jpg",
+      "plantsOwned": [
+        "ObjectId('61d9be787a8abc0015f2c4e7')",
+        "ObjectId('61d9be787a8abc0015f2c4e8')",
+        "ObjectId('61d9be787a8abc0015f2c4e9')"
+      ]
+    },
+    {
+      "username": "greenthumb",
+      "password": "$2b$10$anotherexamplehashedpassword",
+      "email": "greenthumb@example.com",
+      "bio": "I turn sunlight into oxygen.",
+      "profilePicture": "https://example.com/path/to/another/profile/picture.jpg",
+      "plantsOwned": [
+        "ObjectId('61d9be787a8abc0015f2c4ea')",
+        "ObjectId('61d9be787a8abc0015f2c4eb')"
+      ]
+    }
+  ]
+  

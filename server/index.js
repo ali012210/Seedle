@@ -44,7 +44,7 @@ app.use(xss()); // Sanitize user input
 app.use(errorHandlingMiddleware);
 
 // Start server
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 3000; // Use Heroku's dynamic port or default to 3000 if not available
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
