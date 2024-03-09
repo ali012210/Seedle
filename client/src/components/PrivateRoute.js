@@ -1,26 +1,21 @@
-import React, { useContext, useEffect } from 'react';
-import { Route, useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext'; // Adjust the import path according to your project structure
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+// Children is the component that PrivateRoute will render if the user is authenticated
+const PrivateRoute = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext); // Use your AuthContext to determine if the user is authenticated
+  let location = useLocation();
 
-function RedirectToLogin() {
-  let navigate = useNavigate();
+  if (!isAuthenticated) {
+    // Redirect them to the /login page, but save the current location they were
+    // trying to go to when they were redirected. This allows us to send them
+    // along to that location after they login, which is a nicer user experience
+    // than dropping them off on the home page.
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
 
-  useEffect(() => {
-    navigate('/login');
-  }, [navigate]);
-
-  return null;
-};
-
-  return (
-    <Route
-      {...rest}
-      element={isAuthenticated ? <Component /> : <RedirectToLogin />}
-    />
-  ); 
+  return children; 
 };
 
 export default PrivateRoute;
