@@ -37,9 +37,10 @@ A full stack web application in development by **Ali Eideh**
   - [Screens](#screens)
   - [Methodology](#methodology)
 - [Project Management](#project-management)
-  - [Part A: Design and Planning](#part-a-design-and-planning)
-  - [Part B: Deployment](#part-b-deployment)
-  - [Part C: Revised Task Delegation Methodology](#part-c-revised-task-delegation-methodology)
+  - [Design and Planning](#design-and-planning)
+  - [Deployment](#deployment)
+  - [Agile Development Practice](#agile-development-practice)
+  - [Kanban Task Delegation and Prioritisation](#kanban-task-delegation-and-prioritisation)
 
 
 # General
@@ -231,8 +232,10 @@ All users are able to view another users public profile through clicking on thei
 
 # Project Management
 
-## Part A: Design and Planning
+## Design and Planning
 
-## Part B: Deployment
+## Deployment
 
-## Part C: Revised Task Delegation Methodology
+## Kanban Task Delegation and Prioritisation
+
+## Agile Development Practice
