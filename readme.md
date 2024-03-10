@@ -226,16 +226,100 @@ All users are able to view another users public profile through clicking on thei
 
 ## Screens
 
+#### February 21st
+
+![Alt text](docs/git-screens/Feb21.png)
+
+#### February 22nd
+
+![Alt text](docs/git-screens/Feb22.png)
+
+#### February 27th
+
+![Alt text](docs/git-screens/Feb27.png)
+
+#### February 28th
+
+![Alt text](docs/git-screens/Feb28.png)
+
+#### February 29th
+
+![Alt text](docs/git-screens/Feb29.png)
+
+#### March 1st
+
+![Alt text](docs/git-screens/Mar1.png)
+
+#### March 2nd
+
+![Alt text](docs/git-screens/Mar2.png)
+
+#### March 3rd
+
+![Alt text](docs/git-screens/Mar3.png)
+
+#### March 4th
+
+![Alt text](docs/git-screens/Mar4.png)
+
+#### March 5th
+
+![Alt text](docs/git-screens/Mar5.png)
+
+#### March 6th
+
+![Alt text](docs/git-screens/Mar6.png)
+
+#### March 7th
+
+![Alt text](docs/git-screens/Mar7.png)
+
+#### March 8th
+
+![Alt text](docs/git-screens/Mar8.png)
+
+#### March 9th
+
+![Alt text](docs/git-screens/Mar9.png)
+
+#### March 10th
+
+![Alt text](docs/git-screens/Mar10.png)
+
 ## Methodology
+
+#### *Monorepo, Centralised Source of Truth Approach*
+
+Given that Seedle is a single person dev enterprise, I choose a simple, main branch exclusive approach. Not without its flaws and risks, I acknowledge that this approach is not scalable for larger teams, but for a solo dev, it was a simple and effective way to manage the project.
+
+Utilising a monorepo for both my client and server codebases kept my project's components together, offering a single source of truth. This was beneficial to me to the extent that my client and server were intertwined and dependent on one another which made dependency management and versioning easier. By committing directly to the main branch, I ensured I was always working with the most up-to-date version of my codebase. The linear and unified version history made tracking changes and debugging easier, and the single source of truth made it easier. It also meant that features and fixes were integrated immediately. 
+
+Certainly, adopting additional source control best practices such as feature branching and pull requests would have helped isolate work in progress, bugs and experimental features. It would have also provided the impetus to review my code thoroughly and will thus be a practice I will adopt in future projects where I am involved in a team setting.
 
 <br>
 
 # Project Management
 
-## Design and Planning
+### Trello Board Screenshots
 
-## Deployment
+![Alt text](docs/trello-screens/12-feb-1.jpg)
+
+![Alt text](docs/trello-screens/13-feb-2.jpg)
+
+![Alt text](docs/trello-screens/14-feb-1.jpg)
+
+![Alt text](docs/trello-screens/16-feb-1.jpg)
+
+![Alt text](docs/trello-screens/19-feb-1.jpg)
+
+![Alt text](docs/trello-screens/Trello-B1.png)
+
+![Alt text](docs/trello-screens/trello-check.png)
+
+![Alt text](docs/trello-screens/trellob2.png)
 
 ## Kanban Task Delegation and Prioritisation
+
+
 
 ## Agile Development Practice
