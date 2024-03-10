@@ -18,6 +18,9 @@ A full stack web application in development by **Ali Eideh**
 - [Wireframes](#wireframes)
 - [Testing](#testing)
   - [Development Testing](#development-testing)
+- [Source Control](#source-control)
+  - [Screens](#screens)
+  - [Methodology](#methodology)
 - [Project Management](#project-management)
   - [Part A: Design and Planning](#part-a-design-and-planning)
   - [Part B: Deployment](#part-b-deployment)
@@ -200,6 +203,14 @@ All users are able to view another users public profile through clicking on thei
 # Testing
 
 ## Development Testing
+
+<br>
+
+# Source Control
+
+## Screens
+
+## Methodology
 
 <br>
 
