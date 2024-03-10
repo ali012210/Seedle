@@ -320,6 +320,26 @@ Certainly, adopting additional source control best practices such as feature bra
 
 ## Kanban Task Delegation and Prioritisation
 
+Taking on Seedle as an individual developer, managing a Kanban board with a nuanced approach to task delegation and prioritization was essential for maintaining productivity and ensuring project momentum. At the crux of my Kanban approach was the employment of a priority levels (low, medium, high) alongside difficulty metrics (easy, moderate, challenging) system. This provided a structured yet flexible framework for managing tasks which allowed me to balance my workload effectively and ensure that critical tasks were prioritized while also allowing for skill development and preventing burnout.
 
+### Priority Levels
 
-## Agile Development Practice
+- **Low Priority (Green):** Tasks that, while they may improve the project, were not immediately critical. This could include refactoring code for better readability or implementing non-essential features.
+- **Medium Priority (Amber):** Important tasks that did not have immediate deadlines but should have been completed in a timely manner to enhance the project's functionality and user experience. 
+- **High Priority (Red):** Tasks that are crucial for the project's timely deployment (Unfortunately, I have a little more development necessary to get Seedle off the ground- The fundementals I believe are in place however!).
+
+### Difficulty Metrics
+
+- **Easy (Light Purple):** Tasks that are straightforward and require minimal time and effort. 
+- **Moderate (Purple):** These tasks may require a bit more time and possibly research or learning new tools but are manageable.
+- **Challenging (Deep Purple):** Tasks that are complex, requiring significant time, advanced skills, or substantial architectural changes.
+
+### Balancing Strategy
+
+1. **Start With High-Priority Tasks:** Each day, I identified and tackled high-priority tasks first, regardless of their difficulty. This ensured that crucial project milestones were not too far delayed.
+
+2. **Mix Tasks to Manage Energy and Time:** I always tried to maintain balance with my day with a mix of tasks across different difficulty levels. After completing a challenging task, I would switch to an easier task. This helped in managing energy levels and prevented getting too m=demotivated on any given day.
+
+3. **End Day with Low-Priority or Easy Tasks:** I would typically schedule low-priority or easy tasks towards the end of the day. These tasks, often being less demanding, would provide a sense of accomplishment and allow me to wind down.
+
+4. **Task Slicing for Challenging Tickets:** If a task was too challenging or beyond my capabilities at the time, I would give myself license to break it down into smaller, more mundane chunks. This approach, while tedious, would often allow me to make breakthroughs in understanding and provided opportunity for skill development by intricately understanding the problem and would facilitate critical thinking.
