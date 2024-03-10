@@ -2,7 +2,7 @@
 
 A full stack web application in development by **Ali Eideh**
 
-#### [Seedle Github Repo](https://github.com/ali012210/Seedle) 
+#### [Seedle Github](https://github.com/ali012210/Seedle) 
 
 # Table of Contents
 - [General](#general)
@@ -12,7 +12,7 @@ A full stack web application in development by **Ali Eideh**
     - [Tech Stack](#tech-stack)
 - [Application Architecture](#application-architecture)
 - [User Stories](#user-stories)
-- [Textual Wireframes](#textual-wireframes)
+- [Wireframes](wireframes)
 
 
 # General
