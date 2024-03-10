@@ -36,6 +36,7 @@ A full stack web application in development by **Ali Eideh**
 - [Project Management](#project-management)
   - [Part A: Design and Planning](#part-a-design-and-planning)
   - [Part B: Deployment](#part-b-deployment)
+  - [Part C: Revised Task Delegation Methodology](#part-c-revised-task-delegation-methodology)
 
 
 # General
@@ -222,3 +223,5 @@ All users are able to view another users public profile through clicking on thei
 ## Part A: Design and Planning
 
 ## Part B: Deployment
+
+## Part C: Revised Task Delegation Methodology
