@@ -116,8 +116,6 @@ Node.js is a server-side JavaScript runtime that enables the running of JavaScri
 
 # Wireframes
 
-All un-annotated wireframes can be found under `Wireframes/Original`
-
 ### Home Page for logged in users
 
 The home page serves as the entry point to our website. All users will be able to view this page, however some menu items and functionality will be limited to only those that are logged in (such as reacting, commenting, edit / view profile)
