@@ -31,8 +31,6 @@ A full stack web application in development by **Ali Eideh**
     - [User sign up](#user-sign-up)
     - [User edit profile](#user-edit-profile)
     - [User view profile](#user-view-profile)
-- [Testing](#testing)
-  - [Development Testing](#development-testing)
 - [Source Control](#source-control)
   - [Screens](#screens)
   - [Methodology](#methodology)
