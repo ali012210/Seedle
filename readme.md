@@ -5,14 +5,37 @@ A full stack web application in development by **Ali Eideh**
 #### [Seedle Github](https://github.com/ali012210/Seedle) 
 
 # Table of Contents
+- [Seedle 🪴](#seedle-)
+      - [Seedle Github](#seedle-github)
+- [Table of Contents](#table-of-contents)
 - [General](#general)
-    - [Purpose](#purpose)
-    - [Functionality and Features](#functionality-and-features)
-    - [Target Audience](#target-audience)
-    - [Tech Stack](#tech-stack)
+  - [Purpose](#purpose)
+  - [Functionality and Features](#functionality-and-features)
+  - [Target Audience](#target-audience)
+  - [Tech Stack](#tech-stack)
+      - [MongoDB](#mongodb)
+      - [Express.js](#expressjs)
+      - [React](#react)
+      - [Node.js](#nodejs)
 - [Application Architecture](#application-architecture)
 - [User Stories](#user-stories)
-- [Wireframes](wireframes)
+- [Wireframes](#wireframes)
+    - [Home Page for logged in users](#home-page-for-logged-in-users)
+    - [Home page for users that aren't logged in](#home-page-for-users-that-arent-logged-in)
+    - [Searching based on Tags](#searching-based-on-tags)
+    - [Creating a Post](#creating-a-post)
+    - [Discarding a post](#discarding-a-post)
+    - [Viewing threads](#viewing-threads)
+    - [Commenting on threads](#commenting-on-threads)
+    - [User login](#user-login)
+    - [User sign up](#user-sign-up)
+    - [User edit profile](#user-edit-profile)
+    - [User view profile](#user-view-profile)
+- [Testing](#testing)
+  - [Development Testing](#development-testing)
+- [Project Management](#project-management)
+  - [Part A: Design and Planning](#part-a-design-and-planning)
+  - [Part B: Deployment](#part-b-deployment)
 
 
 # General
@@ -185,3 +208,17 @@ Logged in users are able to edit their user details through clicking either the 
 All users are able to view another users public profile through clicking on their username (via a thread post or comment). If a user is logged in, they are also able to navigate to view their own public profile through clicking on the profile picture icon (desktop) or the 'view profile' button in the nav bar. 
 
 ![Alt text](docs/wireframes/11-view-profile.png)
+
+<br>
+
+# Testing
+
+## Development Testing
+
+<br>
+
+# Project Management
+
+## Part A: Design and Planning
+
+## Part B: Deployment
