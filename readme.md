@@ -213,11 +213,6 @@ All users are able to view another users public profile through clicking on thei
 
 <br>
 
-# Testing
-
-## Development Testing
-
-<br>
 
 # Source Control
 
