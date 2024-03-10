@@ -37,7 +37,6 @@ A full stack web application in development by **Ali Eideh**
 - [Project Management](#project-management)
   - [Design and Planning](#design-and-planning)
   - [Deployment](#deployment)
-  - [Agile Development Practice](#agile-development-practice)
   - [Kanban Task Delegation and Prioritisation](#kanban-task-delegation-and-prioritisation)
 
 
