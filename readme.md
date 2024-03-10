@@ -2,6 +2,8 @@
 
 A full stack web application in development by **Ali Eideh**
 
+#### [Seedle Github Repo](https://github.com/ali012210/Seedle) 
+
 # Table of Contents
 - [General](#general)
     - [Purpose](#purpose)
