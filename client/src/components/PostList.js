@@ -2,16 +2,16 @@ import React, { useContext, useEffect, useCallback } from 'react';
 import { PostsContext } from '../context/PostsContext';
 import Post from './Post';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import './PostList.css'; // Assuming you have some CSS for styling
+import './PostList.css'; 
 
 const PostList = () => {
   const { posts, fetchMorePosts, hasMore, isLoading } = useContext(PostsContext);
-const postsPerPage = 10; // Adjust based on your preference
+const postsPerPage = 10; // Adjust based on your preference. For now I believe 10 is a good number
 
 // Function to handle fetching more posts
 const loadMorePosts = useCallback(() => {
     if (!isLoading && hasMore) {
-        fetchMorePosts(posts.length, postsPerPage); // Assuming your context provides this function
+        fetchMorePosts(posts.length, postsPerPage); 
     }
 }, [fetchMorePosts, isLoading, hasMore, posts.length]);
 
@@ -23,7 +23,7 @@ useEffect(() => {
   return (
     <div id="scrollableDiv" className="post-list-container">
       <InfiniteScroll
-        dataLength={posts.length} // This is important field to render the next data
+        dataLength={posts.length} // Field to render the next data
         next={loadMorePosts}
         hasMore={hasMore}
         loader={<h4>Loading...</h4>}

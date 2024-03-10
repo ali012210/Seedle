@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     const checkAuth = () => {
-      const token = localStorage.getItem('token'); // Assuming you are using localStorage for storing your token
+      const token = localStorage.getItem('token'); 
 
       if (token && isTokenExpired(token)) {
         // Token has expired

@@ -6,8 +6,8 @@ import { AuthContext } from '../context/AuthContext';
 // import { CommentsContext } from '../context/CommentsContext';
 import CommentList from './CommentList'; // Component to list comments
 import CreateCommentForm from './CreateCommentForm'; // Form to add a new comment
-import { formatDate } from '../utils/formatDate.js'; // Assume this function exists for formatting dates
-import './PostDetail.css'; // Your CSS for styling
+import { formatDate } from '../utils/formatDate.js'; 
+import './PostDetail.css';
 
 const PostDetail = () => {
   const { postId } = useParams();
@@ -22,7 +22,6 @@ const PostDetail = () => {
         setPost(fetchedPost);
       } catch (error) {
         console.error('Error fetching post details:', error);
-        // Handle error (e.g., redirecting to an error page or displaying a message)
       }
     };
 

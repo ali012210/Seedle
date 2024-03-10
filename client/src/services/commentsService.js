@@ -25,7 +25,7 @@ export const commentsService = {
   fetchCommentsByPostId: async (postId) => {
     try {
       const response = await axiosInstance.get(`/post/${postId}`);
-      return response.data; // Assuming data contains an array of comments for the post
+      return response.data; 
     } catch (error) {
       throw error.response.data;
     }
@@ -35,7 +35,7 @@ export const commentsService = {
   createComment: async (postId, commentData) => {
     try {
       const response = await axiosInstance.post(`/`, { ...commentData, postId });
-      return response.data; // Assuming data contains the created comment object
+      return response.data; 
     } catch (error) {
       throw error.response.data;
     }
@@ -45,7 +45,7 @@ export const commentsService = {
   updateComment: async (commentId, updateData) => {
     try {
       const response = await axiosInstance.put(`/${commentId}`, updateData);
-      return response.data; // Assuming data contains the updated comment object
+      return response.data; 
     } catch (error) {
       throw error.response.data;
     }
@@ -55,12 +55,9 @@ export const commentsService = {
   deleteComment: async (commentId) => {
     try {
       const response = await axiosInstance.delete(`/${commentId}`);
-      return response.data; // Assuming data contains some success indicator
+      return response.data; 
     } catch (error) {
       throw error.response.data;
     }
   },
-
-  // Additional functionality as required for your project
-  // For example, liking a comment, replying to a comment etc.
 };

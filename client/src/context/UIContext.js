@@ -8,7 +8,6 @@ const initialState = {
     isLoading: false,
     errorMessage: '',
     isModalOpen: false,
-    // Add more UI state properties here
 };
 
 // UI reducer function
@@ -29,7 +28,6 @@ const UIReducer = (state, action) => {
                 ...state,
                 isModalOpen: !state.isModalOpen
             };
-        // Add more cases here
         default:
             return state;
     }
@@ -58,7 +56,6 @@ export const UIProvider = ({ children }) => {
         setLoading,
         setErrorMessage,
         toggleModal,
-        // Add more action creators here
     };
 
     return (

@@ -10,7 +10,7 @@ const initialState = {
 // Create the context
 export const CommentsContext = createContext(initialState);
 
-// Define a reducer function to handle actions
+// Define the actions that can be performed on the comments
 const actions = {
     FETCH_COMMENTS_START: 'FETCH_COMMENTS_START',
     FETCH_COMMENTS_SUCCESS: 'FETCH_COMMENTS_SUCCESS',

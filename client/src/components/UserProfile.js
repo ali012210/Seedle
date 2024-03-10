@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { userProfileService } from '../services/userProfileService';
-import './UserProfile.css'; // Assuming you have CSS for styling
+import './UserProfile.css'; 
 
 const UserProfile = () => {
-  const { user } = useContext(AuthContext); // Assuming this contains user info including ID
+  const { user } = useContext(AuthContext); 
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -44,9 +44,7 @@ const UserProfile = () => {
         <p><strong>Name:</strong> {profileData.name}</p>
         <p><strong>Email:</strong> {profileData.email}</p>
         <p><strong>Bio:</strong> {profileData.bio || 'No bio provided.'}</p>
-        {/* Add more personal information here */}
       </div>
-      {/* Extend with more user-specific sections like posts, comments, etc. */}
     </div>
   );
 };

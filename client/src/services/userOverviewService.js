@@ -25,7 +25,7 @@ export const userOverviewService = {
   fetchUserOverview: async (userId) => {
     try {
       const response = await axiosInstance.get(`/${userId}`);
-      return response.data; // Assuming the data contains user profile information
+      return response.data; 
     } catch (error) {
       throw error.response.data;
     }
@@ -35,7 +35,7 @@ export const userOverviewService = {
   fetchUserPosts: async (userId) => {
     try {
       const response = await axiosInstance.get(`/${userId}/posts`);
-      return response.data; // Assuming the data contains an array of the user's posts
+      return response.data; 
     } catch (error) {
       throw error.response.data;
     }
@@ -45,13 +45,10 @@ export const userOverviewService = {
   fetchUserComments: async (userId) => {
     try {
       const response = await axiosInstance.get(`/${userId}/comments`);
-      return response.data; // Assuming the data contains an array of the user's comments
+      return response.data;
     } catch (error) {
       throw error.response.data;
     }
   },
-
-  // Additional functionalities can be implemented as needed, such as updating user profile information,
-  // but considering this service focuses on the public user profile, those features might be managed separately.
 };
 

@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CommentsContext } from '../context/CommentsContext';
-import Comment from './Comment'; // Assume a Comment component exists for individual comments
-import './CommentList.css'; // Assuming you have CSS for styling
+import Comment from './Comment'; 
+import './CommentList.css'; 
 
 const CommentList = () => {
-  const { postId } = useParams(); // Assuming you're using React Router and postId is part of the URL
+  const { postId } = useParams(); 
   const { fetchCommentsForPost } = useContext(CommentsContext);
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

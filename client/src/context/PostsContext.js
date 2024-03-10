@@ -61,10 +61,6 @@ export const PostsContext = createContext();
 export const PostsProvider = ({ children }) => {
     const [state, dispatch] = useReducer(postsReducer, initialState);
 
-    // Define any actions you need to dispatch from your components
-    // For example, fetching posts, liking/unliking posts, etc.
-    // These can be implemented as functions here and passed down via the context
-
     return (
         <PostsContext.Provider value={{ state, dispatch }}>
             {children}

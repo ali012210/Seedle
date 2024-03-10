@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Assuming the base URL of your API and the endpoint for tags
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
 const POSTS_ENDPOINT = '/posts';
 
@@ -22,11 +21,10 @@ export const tagsService = {
   },
 
   // Function to filter posts by tag
-  // Assuming the backend supports filtering posts by tags through a query parameter
   fetchPostsByTag: async (tagName) => {
     try {
       const response = await axiosInstance.get(`${POSTS_ENDPOINT}?tag=${encodeURIComponent(tagName)}`);
-      return response.data; // Assuming the data contains an array of posts filtered by the tag
+      return response.data; 
     } catch (error) {
       throw error.response.data;
     }

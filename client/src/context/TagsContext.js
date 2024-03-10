@@ -29,7 +29,6 @@ export const TagsContext = createContext();
 const actionTypes = {
     SET_SELECTED_TAGS: 'SET_SELECTED_TAGS',
     CLEAR_SELECTED_TAGS: 'CLEAR_SELECTED_TAGS',
-    // Additional actions can be added here as needed
 };
 
 const tagsReducer = (state, action) => {

@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import PostViewPage from './pages/PostViewPage';
 import UserOverview from './pages/UserOverview';
-import PrivateRoute from './components/PrivateRoute'; // Ensure PrivateRoute is adapted for react-router-dom v6
+import PrivateRoute from './components/PrivateRoute'; 
 
 function AppRoutes() {
     return (

@@ -13,7 +13,6 @@ const axiosAuth = axios.create({
 // Handling response to extract and store authentication token
 const handleAuthResponse = (response) => {
     if (response.data.token) {
-        // Assuming the token is in response.data.token
         // Store the token in localStorage
         localStorage.setItem('userToken', response.data.token);
     }

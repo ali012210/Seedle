@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext'; // Adjust the import path according to your project structure
+import { AuthContext } from '../context/AuthContext'; 
 
 // Children is the component that PrivateRoute will render if the user is authenticated
 const PrivateRoute = ({ children }) => {
-  const { isAuthenticated } = useContext(AuthContext); // Use your AuthContext to determine if the user is authenticated
+  const { isAuthenticated } = useContext(AuthContext); // Using AuthContext to determine if the user is authenticated
   let location = useLocation();
 
   if (!isAuthenticated) {

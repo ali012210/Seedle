@@ -2,18 +2,17 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { PostsContext } from '../context/PostsContext';
-import { formatDate } from '../utils/formatDate.js'; // A utility function to format dates
-import './Post.css'; // Assuming you have some CSS for styling
+import { formatDate } from '../utils/formatDate.js'; 
+import './Post.css'; 
 
 const Post = ({ post }) => {
   const { isAuthenticated } = useContext(AuthContext);
   const { likePost, unlikePost } = useContext(PostsContext);
-  const isLiked = post.isLiked || false; // Assuming `post` has an `isLiked` field
+  const isLiked = post.isLiked || false; 
 
   const handleLike = async () => {
     if (isAuthenticated) {
       isLiked ? await unlikePost(post.id) : await likePost(post.id);
-      // Optionally trigger a state update to reflect the like status in the UI
     } else {
       alert('Please log in to like posts.');
     }

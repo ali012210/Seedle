@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import './Login.css'; // Assuming you have CSS for styling
+import './Login.css'; 
 
 const Login = () => {
-  const { login } = useContext(AuthContext); // Assuming login function is defined in AuthContext
+  const { login } = useContext(AuthContext); 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');

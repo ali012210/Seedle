@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { PostsContext } from '../context/PostsContext';
 import { TagsContext } from '../context/TagsContext';
-import './CreatePostForm.css'; // Assuming you have CSS for styling
+import './CreatePostForm.css'; 
 
 const CreatePostForm = () => {
   const { addPost } = useContext(PostsContext);
@@ -12,7 +12,7 @@ const CreatePostForm = () => {
   const [selectedTags, setSelectedTags] = useState([]);
   const [image, setImage] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleFileChange = (e) => {
     setImage(e.target.files[0]);
@@ -34,8 +34,8 @@ const CreatePostForm = () => {
     }
 
     try {
-      await addPost(formData); // Adjust the addPost method to handle FormData if necessary
-      history.push('/'); // Redirect to the homepage or desired path after successful post creation
+      await addPost(formData); 
+      navigate('/'); // Redirect to the homepage or desired path after successful post creation
     } catch (error) {
       console.error('Error creating post:', error);
       setErrorMessage('Failed to create post. Please try again.');

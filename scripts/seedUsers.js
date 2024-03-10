@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const User = require('../server/models/User'); // Adjust the path to where your User model is located
+const User = require('../server/models/User'); 
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {

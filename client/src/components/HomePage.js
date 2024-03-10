@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { PostsContext } from '../context/PostsContext';
 import PostList from './PostList';
-import CreatePostQuickForm from './CreatePostQuickForm'; // Assume this is a simplified form component for quick posts
+import CreatePostQuickForm from './CreatePostQuickForm'; 
 
 const HomePage = () => {
   // Access global states
@@ -19,7 +19,7 @@ const HomePage = () => {
     fetchPosts(searchTerm, filterTag);
   }, [fetchPosts, searchTerm, filterTag]);
 
-  // Handlers for search and tag filtering, assume these are called from within your UI
+  // Handlers for search and tag filtering, called from within UI
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -43,8 +43,6 @@ const HomePage = () => {
           value={searchTerm}
           onChange={handleSearchChange}
         />
-        {/* Tag filter component - assume it updates `filterTag` on change */}
-        {/* Placeholder component - replace with your actual tag filter component */}
         <select onChange={(e) => handleTagFilterChange(e.target.value)}>
           <option value="">Select a tag...</option>
           {/* Options should be dynamically generated based on available tags */}
@@ -56,7 +54,7 @@ const HomePage = () => {
       <PostList />
 
       <footer className="homepage-footer">
-        {/* Footer content - could include links to about, contact, etc. */}
+        {/* Footer content */}
         <Link to="/about">About Seedle</Link>
         <Link to="/contact">Contact Us</Link>
       </footer>

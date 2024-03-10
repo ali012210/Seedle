@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { PostsContext } from '../context/PostsContext'; // Assuming you have this context
+import { PostsContext } from '../context/PostsContext';
 import { useNavigate } from 'react-router-dom'; // For redirecting after post creation
 
 const CreatePostQuickForm = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [tag, setTag] = useState('');
-  const { addPost } = useContext(PostsContext); // Assuming your PostsContext provides a method to add a new post
+  const { addPost } = useContext(PostsContext); 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -62,7 +62,6 @@ const CreatePostQuickForm = () => {
           {/* Dynamically list options based on available tags */}
           <option value="Gardening">Gardening</option>
           <option value="HousePlants">House Plants</option>
-          {/* Add more options based on your tag system */}
         </select>
       </div>
       <button type="submit" className="submit-btn">

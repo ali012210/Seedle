@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CommentsContext } from '../context/CommentsContext';
 import { AuthContext } from '../context/AuthContext';
-import './CreateCommentForm.css'; // Assuming you have CSS for styling
+import './CreateCommentForm.css'; 
 
 const CreateCommentForm = () => {
   const [comment, setComment] = useState('');
   const { addComment } = useContext(CommentsContext);
   const { isAuthenticated } = useContext(AuthContext);
-  const { postId } = useParams(); // Assuming this component is used where postId is in the URL
+  const { postId } = useParams(); 
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '../services/authService';
-import './SignUp.css'; // Assuming you have CSS for styling
+import './SignUp.css'; 
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
@@ -26,7 +26,6 @@ const SignUp = () => {
     }
 
     try {
-      // Assuming authService has a signUp method that takes this data structure
       await authService.signUp({
         username,
         password,

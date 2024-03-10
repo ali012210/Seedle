@@ -23,7 +23,6 @@ const CreatePost = () => {
         };
 
         // Dispatch action to add new post to global state
-        // Replace with actual API call to add new post
         dispatch({ type: 'ADD_POST', payload: newPost });
 
         // Clear the form

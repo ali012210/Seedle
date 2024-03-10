@@ -1,14 +1,12 @@
-// src/api/axiosConfig.js
 import axios from 'axios';
 
 // Create an Axios instance
 const axiosInstance = axios.create({
     // Set the base URL for all requests made using this instance
-    baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api', // Update with your actual API base URL
+    baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api',
     // Default headers for all requests
     headers: {
-        'Content-Type': 'application/json', // Assuming JSON for all requests
-        // Any other default headers
+        'Content-Type': 'application/json', 
     },
 });
 

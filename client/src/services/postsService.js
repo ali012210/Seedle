@@ -24,7 +24,7 @@ export const updatePost = async (postId, postData) => {
 // Delete a post
 export const deletePost = async (postId) => {
   const response = await axiosInstance.delete(`/posts/${postId}`);
-  return response.data; // This might be empty depending on your API's implementation
+  return response.data; 
 };
 
 // Fetch a single post by ID
@@ -35,16 +35,14 @@ export const fetchPostById = async (postId) => {
 
 // Like (seed) a post
 export const likePost = async (postId) => {
-  // Assuming your API expects a POST request to like a post and tracks likes server-side
   const response = await axiosInstance.post(`/posts/${postId}/like`);
-  return response.data; // Update according to your API response structure
+  return response.data; 
 };
 
 // Unlike (remove seed from) a post
 export const unlikePost = async (postId) => {
-  // Assuming your API expects a POST request to unlike a post
   const response = await axiosInstance.post(`/posts/${postId}/unlike`);
-  return response.data; // Update according to your API response structure
+  return response.data; 
 };
 
 

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { formatDate } from '../utils/formatDate.js'; // Assuming a utility function for date formatting
-import './Comment.css'; // Assuming you have CSS for styling
+import { formatDate } from '../utils/formatDate.js'; 
+import './Comment.css'; 
 
 const Comment = ({ comment }) => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -13,9 +13,6 @@ const Comment = ({ comment }) => {
       return;
     }
 
-    // Implement like functionality here
-    // This could involve calling a function from a context or service
-    // that interacts with your backend to like the comment.
     console.log('Liking comment not implemented');
   };
 
